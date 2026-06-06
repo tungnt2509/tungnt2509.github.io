@@ -1,495 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tung Nguyen | Senior Java Backend Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: rgba(255, 255, 255, .04);
+            --border: rgba(255, 255, 255, .08);
+            --text: #fff;
+            --muted: #9ca3af;
+            --accent: #3b82f6;
+        }
 
-<title>Tung Nguyen | Senior Java Backend Engineer</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        body {
+            font-family: Inter, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        body::before {
+            content: "";
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            background: #2563eb;
+            filter: blur(220px);
+            opacity: .08;
+            top: -300px;
+            right: -200px;
+            pointer-events: none;
+        }
 
-<style>
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-:root{
-    --bg:#0a0a0a;
-    --card:rgba(255,255,255,0.04);
-    --border:rgba(255,255,255,0.08);
-    --text:#ffffff;
-    --muted:#9ca3af;
-    --accent:#3b82f6;
-}
+        .container {
+            width: min(1150px, 92%);
+            margin: auto
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        .glass {
+            background: var(--card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border)
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        section {
+            padding: 50px 0
+        }
 
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.7;
-}
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center
+        }
 
-.container{
-    width:min(1100px,92%);
-    margin:auto;
-}
+        .hero-content {
+            display: grid;
+            grid-template-columns:170px 1fr;
+            gap: 50px;
+            align-items: center;
+            animation: fadeUp .8s ease forwards;
+        }
 
-.glass{
-    background:var(--card);
-    backdrop-filter:blur(20px);
-    border:1px solid var(--border);
-}
+        .avatar {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, .1)
+        }
 
-section{
-    padding:80px 0;
-}
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-}
+        .badge {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(59, 130, 246, .15);
+            color: #60a5fa;
+            margin-bottom: 20px
+        }
 
-.hero-content{
-    display:grid;
-    grid-template-columns:160px 1fr;
-    gap:50px;
-    align-items:center;
-}
+        h1 {
+            font-size: 64px;
+            line-height: 1.05
+        }
 
-.avatar{
-    width:160px;
-    height:160px;
-    border-radius:50%;
-    overflow:hidden;
-    border:2px solid rgba(255,255,255,.1);
-}
+        h2.sub {
+            color: var(--muted);
+            font-weight: 500;
+            margin: 12px 0 24px
+        }
 
-.avatar img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
+        .hero p {
+            color: var(--muted);
+            max-width: 700px
+        }
 
-.badge{
-    display:inline-block;
-    padding:8px 14px;
-    border-radius:999px;
-    background:rgba(59,130,246,.15);
-    color:#60a5fa;
-    font-size:14px;
-    margin-bottom:20px;
-}
+        .buttons {
+            display: flex;
+            gap: 14px;
+            margin-top: 28px;
+            flex-wrap: wrap
+        }
 
-.hero h1{
-    font-size:64px;
-    line-height:1.05;
-    margin-bottom:12px;
-}
+        button.btn {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
 
-.hero h2{
-    color:var(--muted);
-    font-weight:500;
-    margin-bottom:24px;
-}
+        .btn {
+            padding: 12px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+            cursor: pointer;
+        }
 
-.hero p{
-    color:var(--muted);
-    max-width:700px;
-    font-size:18px;
-}
+        .btn-primary {
+            background: #fff;
+            color: #000
+        }
 
-.buttons{
-    display:flex;
-    gap:14px;
-    margin-top:30px;
-    flex-wrap:wrap;
-}
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: #fff
+        }
 
-.btn{
-    padding:12px 22px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-}
+        .btn:hover, .card:hover {
+            transform: translateY(-4px)
+        }
 
-.btn-primary{
-    background:white;
-    color:black;
-}
+        .metrics, .projects {
+            display: grid;
+            gap: 20px
+        }
 
-.btn-secondary{
-    border:1px solid var(--border);
-    color:white;
-}
+        .metrics {
+            display: grid;
+            grid-template-columns:repeat(4, 1fr);
+            gap: 20px;
+        }
 
-.btn:hover{
-    transform:translateY(-2px);
-}
+        .metric-card {
+            text-align: center;
+            padding: 32px 20px;
+            border-radius: 24px;
+            transition: .3s;
+        }
 
-.metrics{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
+        .metric-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(59, 130, 246, .25);
+        }
 
-.metric{
-    padding:28px;
-    border-radius:20px;
-    text-align:center;
-}
+        .metric-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
 
-.metric:hover{
-    transform:translateY(-6px);
-}
+        .metric-subtitle {
+            color: var(--muted);
+            font-size: 14px;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+        }
 
-.metric,
-.project{
-    transition:.35s ease;
-}
+        .card, .project {
+            padding: 28px;
+            border-radius: 24px;
+            transition: .3s
+        }
 
-.metric h3{
-    font-size:40px;
-}
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, .3);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, .15);
+        }
 
-.metric p{
-    color:var(--muted);
-}
+        .metric-title {
+            font-size: 38px;
+            font-weight: 800
+        }
 
-.section-title{
-    font-size:42px;
-    margin-bottom:40px;
-}
+        .muted {
+            color: var(--muted)
+        }
 
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:24px;
-}
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 28px
+        }
 
-.project{
-    padding:30px;
-    border-radius:24px;
-}
+        .projects {
+            grid-template-columns:repeat(auto-fit, minmax(320px, 1fr))
+        }
 
-.project:hover{
-    transform:translateY(-8px);
-    border-color:rgba(59,130,246,.3);
-}
+        .project-role {
+            color: #60a5fa;
+            margin: 8px 0 14px
+        }
 
-.project h3{
-    font-size:24px;
-    margin-bottom:10px;
-}
+        .tags, .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px
+        }
 
-.project-role{
-    color:#60a5fa;
-    margin-bottom:16px;
-}
+        .tag, .skill {
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid var(--border)
+        }
 
-.project p{
-    color:var(--muted);
-    margin-bottom:20px;
-}
+        .contact {
+            text-align: center
+        }
 
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-}
+        .contact a {
+            color: #60a5fa;
+            text-decoration: none
+        }
 
-.tag{
-    padding:6px 12px;
-    border-radius:999px;
-    background:rgba(255,255,255,.05);
-    color:#d1d5db;
-    font-size:13px;
-}
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--muted)
+        }
 
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns:1fr;
+                text-align: center
+            }
 
-.skill{
-    padding:12px 18px;
-    border-radius:14px;
-    background:rgba(255,255,255,.04);
-    border:1px solid var(--border);
-}
+            .avatar {
+                margin: auto
+            }
 
-.contact{
-    text-align:center;
-}
+            h1 {
+                font-size: 42px
+            }
 
-.contact a{
-    color:#60a5fa;
-    text-decoration:none;
-}
+            .buttons {
+                justify-content: center
+            }
+        }
 
-.footer{
-    text-align:center;
-    padding:40px 0;
-    color:var(--muted);
-    border-top:1px solid var(--border);
-}
+        @media print {
 
-@media(max-width:768px){
+            body {
+                background: white !important;
+                color: black !important;
+            }
 
-    .hero{
-        padding-top:50px;
-    }
+            body::before {
+                display: none;
+            }
 
-    .hero-content{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
+            .project,
+            .card,
+            .metric-card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
 
-    .avatar{
-        margin:auto;
-    }
+            .btn {
+                display: none;
+            }
 
-    .hero h1{
-        font-size:42px;
-    }
+            .hero {
+                min-height: auto;
+            }
 
-    .metrics{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .buttons{
-        justify-content:center;
-    }
-}
-
-</style>
+            section {
+                padding: 20px 0;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
 <div class="container">
 
-<section class="hero">
+    <section class="hero">
+        <div class="hero-content">
+            <div class="avatar"><img src="avatar.jpg" alt="Tung Nguyen"></div>
+            <div>
+                <div class="badge">Senior Java Backend Engineer | Backend Lead</div>
+                <h1>Tung Nguyen</h1>
+                <h2 class="sub">Banking • SaaS • Retail • Distributed Systems</h2>
+                <p>
+                    Backend Engineer with 8+ years of experience designing and delivering enterprise platforms.
+                    Experienced in Java, Spring Boot, Microservices, Kafka, Redis, PostgreSQL, MongoDB and CI/CD.
+                    Led backend teams across Banking, GolfTech and Retail domains.
+                </p>
+<!--                <div class="buttons">-->
+<!--                    <a id="download-resume"-->
+<!--                       class="btn btn-primary">-->
+<!--                        Download Resume-->
+<!--                    </a>-->
+<!--                    <a class="btn btn-secondary" href="mailto:tungnt2509@gmail.com">Contact Me</a>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </section>
 
-<div class="hero-content">
+    <section>
 
-<div class="avatar">
-    <img src="avatar.jpg" alt="Tung Nguyen">
+        <div class="metrics">
+
+            <div class="metric-card glass">
+                <div class="metric-title">8+</div>
+                <div class="metric-subtitle">
+                    Years Experience
+                </div>
+            </div>
+
+            <div class="metric-card glass">
+                <div class="metric-title">Banking</div>
+                <div class="metric-subtitle">
+                    Domain Expertise
+                </div>
+            </div>
+
+            <div class="metric-card glass">
+                <div class="metric-title">Microservices</div>
+                <div class="metric-subtitle">
+                    Architecture Focus
+                </div>
+            </div>
+
+            <div class="metric-card glass">
+                <div class="metric-title">10+</div>
+                <div class="metric-subtitle">
+                    Engineers Led
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+        <h2 class="section-title">Career Journey</h2>
+        <div class="projects">
+            <div class="project glass">
+                <h3>🏢 Micro High Tech</h3>
+                <div class="project-role">Software Engineer • 2017 — 2021</div>
+                <p>Built enterprise applications, REST APIs and business management systems. Developed strong
+                    foundations in software architecture, database design and backend engineering.</p>
+                <div class="tags">
+                    <span class="tag">Java</span><span class="tag">Groovy/Grails</span><span
+                        class="tag">PostgreSQL</span><span class="tag">REST API</span>
+                </div>
+            </div>
+
+            <div class="project glass">
+                <h3>⛳ Golf Software Solutions</h3>
+                <div class="project-role">Senior Backend Engineer → Backend Lead • 2021 — 2025</div>
+                <p>Led backend development for golf technology products. Responsible for architecture design, API
+                    development, production support, team leadership and stakeholder collaboration.</p>
+                <div class="tags">
+                    <span class="tag">Spring Boot</span><span class="tag">MongoDB</span><span
+                        class="tag">RabbitMQ</span><span class="tag">Elasticsearch</span>
+                </div>
+            </div>
+
+            <div class="project glass">
+                <h3>🏦 VPBank</h3>
+                <div class="project-role">Lead Backend Engineer • 2025 — Present</div>
+                <p>Leading backend development for enterprise banking systems with focus on Microservices, Kafka, Redis,
+                    CI/CD and high-volume business workflows.</p>
+                <div class="tags">
+                    <span class="tag">Java 17</span><span class="tag">Kafka</span><span class="tag">Redis</span><span
+                        class="tag">Kubernetes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects">
+
+            <div class="project glass">
+                <h3>🏦 Property & Document Management System (PDMS)</h3>
+                <div class="project-role">Lead Backend Engineer</div>
+                <p>Enterprise banking platform for managing collateral assets, warehouse operations and document
+                    lifecycle workflows. Designed scalable microservices and event-driven processing architecture.</p>
+                <div class="tags">
+                    <span class="tag">Spring Boot</span><span class="tag">Kafka</span><span
+                        class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span
+                        class="tag">CI/CD</span>
+                </div>
+            </div>
+
+            <div class="project glass">
+                <h3>⛳ Gonta Ecosystem</h3>
+                <div class="project-role">Backend Lead</div>
+                <p>Golf technology ecosystem combining GPS, scorecards, booking services, handicap management, social
+                    features and golfer communities. Supporting 13,000+ users and 40,000+ golf courses.</p>
+                <div class="tags">
+                    <span class="tag">Java</span><span class="tag">Spring Boot</span><span
+                        class="tag">MongoDB</span><span class="tag">Elasticsearch</span><span
+                        class="tag">RabbitMQ</span>
+                </div>
+            </div>
+
+            <div class="project glass">
+                <h3>☕ URCup Retail Platform</h3>
+                <div class="project-role">Lead Backend Engineer</div>
+                <p>Retail ecosystem for beverage ordering, inventory management, voucher campaigns, payment integrations
+                    and logistics services.</p>
+                <div class="tags">
+                    <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span
+                        class="tag">VNPay</span><span class="tag">MoMo</span>
+                </div>
+            </div>
+
+            <div class="project glass">
+
+                <h3>🏢 Easy Building</h3>
+                <div class="project-role">
+                    Backend Engineer
+                </div>
+
+                <p>
+                    Building and apartment management platform supporting residents,
+                    facility operations, maintenance workflows and administration services.
+                    Developed backend services and participated in architecture improvements.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">RabbitMQ</span>
+                </div>
+
+            </div>
+
+            <div class="project glass">
+
+                <h3>⛳ Golf Management System (GMS)</h3>
+                <div class="project-role">
+                    Backend Engineer
+                </div>
+
+                <p>
+                    Golf course and restaurant management platform with online booking,
+                    scheduling and operational management capabilities. Developed APIs
+                    and business workflows for golf clubs and hospitality services.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Groovy/Grails</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">RabbitMQ</span>
+                    <span class="tag">REST API</span>
+                </div>
+
+            </div>
+            <div class="project glass">
+
+                <h3>📊 Customer Relationship Management (CRM)</h3>
+
+                <div class="project-role">
+                    Lead Backend Engineer
+                </div>
+
+                <p>
+                    Enterprise CRM platform designed to manage customer profiles,
+                    sales pipelines, marketing campaigns and customer service operations.
+                    Built scalable backend services supporting business workflows,
+                    reporting and third-party integrations.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Redis</span>
+                    <span class="tag">RabbitMQ</span>
+                    <span class="tag">REST API</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Core Technologies</h2>
+        <div class="skills">
+            <div class="skill">Java 8/11/17</div>
+            <div class="skill">Spring Boot</div>
+            <div class="skill">Microservices</div>
+            <div class="skill">Kafka</div>
+            <div class="skill">RabbitMQ</div>
+            <div class="skill">Redis</div>
+            <div class="skill">PostgreSQL</div>
+            <div class="skill">MongoDB</div>
+            <div class="skill">Elasticsearch</div>
+            <div class="skill">Docker</div>
+            <div class="skill">Kubernetes</div>
+            <div class="skill">CI/CD</div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <p>📧 <a href="mailto:tungnt2509@gmail.com">tungnt2509@gmail.com</a></p>
+        <p>📱 +84 868 444 526</p>
+        <p>📍 Thu Duc City, Ho Chi Minh City, Vietnam</p>
+    </section>
+
+    <div class="footer">© 2026 Tung Nguyen • Senior Java Backend Engineer</div>
+
 </div>
-
-<div>
-
-<span class="badge">
-Senior Java Backend Engineer
-</span>
-
-<h1>Tung Nguyen</h1>
-
-<h2>
-Backend Lead • Banking • SaaS • GolfTech
-</h2>
-
-<p>
-8+ years of experience building enterprise platforms,
-banking systems, SaaS products and distributed architectures.
-Specialized in Java, Spring Boot, Kafka, Redis,
-PostgreSQL and Microservices.
-</p>
-
-<div class="buttons">
-
-<a class="btn btn-primary"
-href="Tung_Nguyen_CV.pdf"
-target="_blank">
-Resume
-</a>
-
-<a class="btn btn-secondary"
-href="https://github.com/tungnt2509"
-target="_blank">
-GitHub
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="metrics">
-
-<div class="metric glass">
-<h3>8+</h3>
-<p>Years Experience</p>
-</div>
-
-<div class="metric glass">
-<h3>13K+</h3>
-<p>Users Served</p>
-</div>
-
-<div class="metric glass">
-<h3>40K+</h3>
-<p>Golf Courses</p>
-</div>
-
-<div class="metric glass">
-<h3>10+</h3>
-<p>Engineers Led</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">
-Highlighted Experience
-</h2>
-
-<div class="projects">
-
-<div class="project glass">
-
-<h3>VPBank</h3>
-
-<div class="project-role">
-Lead Backend Engineer
-</div>
-
-<p>
-Property & Document Management System (PDMS)
-for collateral assets, warehouse management and
-document lifecycle operations.
-</p>
-
-<div class="tags">
-<span class="tag">Java 17</span>
-<span class="tag">Spring Boot</span>
-<span class="tag">Kafka</span>
-<span class="tag">Redis</span>
-<span class="tag">PostgreSQL</span>
-<span class="tag">CI/CD</span>
-</div>
-
-</div>
-
-<div class="project glass">
-
-<h3>EasyGolf</h3>
-
-<div class="project-role">
-Backend Lead
-</div>
-
-<p>
-Global golf GPS and scorecard platform with
-40,000+ golf courses and 13,000+ active users.
-</p>
-
-<div class="tags">
-<span class="tag">Spring Boot</span>
-<span class="tag">MongoDB</span>
-<span class="tag">RabbitMQ</span>
-<span class="tag">Elasticsearch</span>
-</div>
-
-</div>
-
-<div class="project glass">
-
-<h3>Gonta</h3>
-
-<div class="project-role">
-Backend Lead
-</div>
-
-<p>
-Vietnam's golf ecosystem platform including
-booking, handicap calculation and AI-powered features.
-</p>
-
-<div class="tags">
-<span class="tag">Java</span>
-<span class="tag">Angular</span>
-<span class="tag">VectorDB</span>
-<span class="tag">MongoDB</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">
-Core Technologies
-</h2>
-
-<div class="skills">
-
-<div class="skill">☕ Java 8/11/17</div>
-<div class="skill">🍃 Spring Boot</div>
-<div class="skill">🏗️ Microservices</div>
-<div class="skill">📨 Kafka</div>
-<div class="skill">🐇 RabbitMQ</div>
-<div class="skill">🔴 Redis</div>
-<div class="skill">🐘 PostgreSQL</div>
-<div class="skill">🍃 MongoDB</div>
-<div class="skill">🔎 Elasticsearch</div>
-<div class="skill">🐳 Docker</div>
-<div class="skill">☸️ Kubernetes</div>
-<div class="skill">⚙️ CI/CD</div>
-
-</div>
-
-</section>
-
-<section class="contact">
-
-<h2 class="section-title">
-Let's Connect
-</h2>
-
-<p>
-📧 <a href="mailto:tungnt2509@gmail.com">tungnt2509@gmail.com</a>
-</p>
-
-<p>
-📱 +84 868 444 526
-</p>
-
-<p>
-💻 <a href="https://github.com/tungnt2509">GitHub</a>
-</p>
-
-</section>
-
-<div class="footer">
-Built with HTML & CSS • 2026
-</div>
-
-</div>
-
 </body>
+<script>
+    document.getElementById("download-resume")
+        .addEventListener("click", () => {
+            const element = document.querySelector(".container");
+            const opt = {
+                margin: 8,
+                filename: "Tung_Nguyen_Resume.pdf",
+                image: {
+                    type: "jpeg",
+                    quality: 1
+                },
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true
+                },
+                jsPDF: {
+                    unit: "mm",
+                    format: "a4",
+                    orientation: "portrait"
+                },
+                pagebreak: {
+                    mode: [
+                        "avoid-all",
+                        "css",
+                        "legacy"
+                    ]
+                }
+            };
+
+            html2pdf()
+                .set(opt)
+                .from(element)
+                .save();
+        });
+
+</script>
 </html>
-```
