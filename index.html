@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,117 +7,351 @@
     <title>Tung Nguyen | Senior Java Backend Engineer</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --success: #16a34a;
+        }
+
         body {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px;
-            font-family: Arial, sans-serif;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
 
-        h1 {
-            margin-bottom: 5px;
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 32px 20px;
         }
 
-        .tag {
-            display: inline-block;
-            padding: 6px 12px;
-            margin: 4px;
-            background: #f3f4f6;
+        .hero {
+            background: var(--card);
             border-radius: 20px;
+            padding: 48px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
         }
 
-        .section {
-            margin-top: 40px;
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: var(--secondary);
+            max-width: 800px;
+        }
+
+        .contact {
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .stats {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-card h3 {
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        section {
+            margin-top: 32px;
+        }
+
+        .card {
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .section-title {
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .job {
+            border-left: 4px solid var(--primary);
+            padding-left: 20px;
+        }
+
+        .job h3 {
+            margin-bottom: 4px;
+        }
+
+        .job .period {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .highlight {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 24px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        @media(max-width:768px){
+            .hero{
+                padding:30px;
+            }
+
+            .hero h1{
+                font-size:36px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<h1>Tung Nguyen</h1>
+<div class="container">
 
-<h3>Senior Java Backend Engineer | Backend Lead</h3>
+    <div class="hero">
 
-<p>
-8+ years of experience building Banking, SaaS, Retail and GolfTech platforms.
-</p>
+        <h1>Tung Nguyen</h1>
 
-<p>
-📧 tungnt2509@gmail.com<br>
-📱 +84 868 444 526<br>
-💻 GitHub: github.com/tungnt2509
-</p>
+        <h2>Senior Java Backend Engineer | Backend Lead</h2>
 
-<div class="section">
-<h2>Tech Stack</h2>
+        <p>
+            Backend Engineer with 8+ years of experience building enterprise systems across
+            Banking, SaaS, Retail and Golf Technology domains.
+            Specialized in Microservices, Distributed Systems, Event-Driven Architecture,
+            Database Optimization, CI/CD and Technical Leadership.
+        </p>
 
-<span class="tag">Java</span>
-<span class="tag">Spring Boot</span>
-<span class="tag">Kafka</span>
-<span class="tag">Redis</span>
-<span class="tag">PostgreSQL</span>
-<span class="tag">MongoDB</span>
-<span class="tag">Docker</span>
-<span class="tag">Kubernetes</span>
-<span class="tag">RabbitMQ</span>
-</div>
+        <div class="contact">
+            <span>📍 Ho Chi Minh City, Vietnam</span>
+            <span>📧 <a href="mailto:tungnt2509@gmail.com">tungnt2509@gmail.com</a></span>
+            <span>📱 +84 868 444 526</span>
+            <span>💻 <a href="https://github.com/tungnt2509" target="_blank">GitHub</a></span>
+            <span>🔗 <a href="#" target="_blank">LinkedIn</a></span>
+        </div>
 
-<div class="section">
-<h2>Professional Summary</h2>
+        <div class="stats">
 
-<ul>
-<li>8+ years of software engineering experience</li>
-<li>Backend Lead experience</li>
-<li>Banking Domain (VPBank)</li>
-<li>Microservices Architecture</li>
-<li>Event-Driven Systems</li>
-<li>CI/CD Automation</li>
-<li>System Design</li>
-</ul>
+            <div class="stat-card">
+                <h3>8+</h3>
+                <p>Years Experience</p>
+            </div>
 
-</div>
+            <div class="stat-card">
+                <h3>5+</h3>
+                <p>Large Projects</p>
+            </div>
 
-<div class="section">
-<h2>Experience</h2>
+            <div class="stat-card">
+                <h3>10+</h3>
+                <p>Team Members Led</p>
+            </div>
 
-<h3>Lead Backend Engineer – VPBank</h3>
+            <div class="stat-card">
+                <h3>13K+</h3>
+                <p>Users Served</p>
+            </div>
 
-<p>
-Property & Document Management System (PDMS)
-</p>
+        </div>
 
-<ul>
-<li>Led backend development team</li>
-<li>Designed microservices architecture</li>
-<li>Implemented Kafka-driven workflows</li>
-<li>Optimized PostgreSQL and Redis performance</li>
-<li>Built CI/CD pipelines</li>
-</ul>
+        <a href="Tung_Nguyen_CV.pdf" class="btn">
+            Download Resume
+        </a>
 
-<h3>Backend Lead – GSS</h3>
+    </div>
 
-<p>
-EasyGolf • Gonta • URCup
-</p>
+    <section>
+        <div class="card">
 
-<ul>
-<li>Backend architecture design</li>
-<li>Database design & optimization</li>
-<li>API development</li>
-<li>Technical mentoring</li>
-</ul>
+            <h2 class="section-title">Technical Expertise</h2>
 
-</div>
+            <div class="skills">
 
-<div class="section">
-<h2>Resume</h2>
+                <span class="skill">Java 8/11/17</span>
+                <span class="skill">Spring Boot</span>
+                <span class="skill">Spring Cloud</span>
+                <span class="skill">Microservices</span>
+                <span class="skill">Kafka</span>
+                <span class="skill">RabbitMQ</span>
+                <span class="skill">Redis</span>
+                <span class="skill">PostgreSQL</span>
+                <span class="skill">MongoDB</span>
+                <span class="skill">Elasticsearch</span>
+                <span class="skill">Docker</span>
+                <span class="skill">Kubernetes</span>
+                <span class="skill">CI/CD</span>
+                <span class="skill">OAuth2</span>
+                <span class="skill">JWT</span>
+                <span class="skill">System Design</span>
 
-<a href="Tung_Nguyen_CV.pdf" target="_blank">
-Download CV
-</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="card">
+
+            <h2 class="section-title">Professional Summary</h2>
+
+            <ul>
+                <li>8+ years of software engineering experience with strong focus on backend development.</li>
+                <li>Led backend teams and owned architecture decisions for multiple production systems.</li>
+                <li>Designed scalable microservices serving Banking, SaaS, Retail and GolfTech domains.</li>
+                <li>Hands-on experience with distributed systems, asynchronous processing and event-driven architecture.</li>
+                <li>Strong expertise in database design, query optimization and caching strategies.</li>
+                <li>Experience building CI/CD pipelines and maintaining production environments.</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="card">
+
+            <h2 class="section-title">Experience Highlights</h2>
+
+            <div class="timeline">
+
+                <div class="job">
+
+                    <h3>Lead Backend Engineer — Banking Domain (VPBank)</h3>
+
+                    <div class="period">2024 - 2025</div>
+
+                    <ul>
+                        <li>Led backend development for Property & Document Management System (PDMS).</li>
+                        <li>Designed microservices architecture using Java, Spring Boot and Kafka.</li>
+                        <li>Implemented asynchronous processing workflows for document and collateral asset management.</li>
+                        <li>Optimized PostgreSQL and Redis usage to improve API performance and scalability.</li>
+                        <li>Built CI/CD deployment pipelines and production monitoring processes.</li>
+                    </ul>
+
+                </div>
+
+                <div class="job">
+
+                    <h3>Backend Lead — Golf Software Solutions (GSS)</h3>
+
+                    <div class="period">2019 - Present</div>
+
+                    <ul>
+                        <li>Led backend development for multiple SaaS and mobile products.</li>
+                        <li>Designed REST APIs, database architecture and integration solutions.</li>
+                        <li>Collaborated with stakeholders, QA and DevOps teams to deliver business-critical features.</li>
+                        <li>Mentored junior engineers and conducted code reviews.</li>
+                        <li>Participated in architecture design, deployment planning and production support.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="card">
+
+            <h2 class="section-title">Key Achievements</h2>
+
+            <ul>
+                <li><span class="highlight">8+ years</span> building enterprise applications.</li>
+                <li><span class="highlight">13,000+</span> active users supported through production systems.</li>
+                <li><span class="highlight">40,000+</span> golf courses managed within global golf platforms.</li>
+                <li>Led backend teams of up to <span class="highlight">10+ engineers</span>.</li>
+                <li>Delivered systems across Banking, Retail, SaaS and Mobile domains.</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <div class="footer">
+        © 2026 Tung Nguyen • Senior Java Backend Engineer
+    </div>
 
 </div>
 
 </body>
 </html>
+```
