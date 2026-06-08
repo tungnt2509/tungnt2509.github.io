@@ -85,20 +85,20 @@
             animation: fadeUp .8s ease forwards;
         }
 
-        .avatar{
+        .avatar {
             background: white;
-            width:180px;
-            height:180px;
-            border-radius:50%;
-            overflow:hidden;
-            border:2px solid rgba(255,255,255,.08);
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, .08);
         }
 
-        .avatar img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            object-position:center center;
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
             /*transform:scale(.82);*/
         }
 
@@ -227,7 +227,9 @@
         }
 
         .projects {
-            grid-template-columns:repeat(auto-fit, minmax(320px, 1fr))
+            display: grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .project-role {
@@ -245,7 +247,14 @@
             padding: 8px 12px;
             border-radius: 999px;
             background: rgba(255, 255, 255, .05);
-            border: 1px solid var(--border)
+            border: 1px solid var(--border);
+            transition: all .25s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-3px);
+            border-color: rgba(59, 130, 246, .25);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, .12);
         }
 
         .contact {
@@ -329,52 +338,52 @@
                     Experienced in Java, Spring Boot, Microservices, Kafka, Redis, PostgreSQL, MongoDB and CI/CD.
                     Led backend teams across Banking, GolfTech and Retail domains.
                 </p>
-<!--                <div class="buttons">-->
-<!--                    <a id="download-resume"-->
-<!--                       class="btn btn-primary">-->
-<!--                        Download Resume-->
-<!--                    </a>-->
-<!--                    <a class="btn btn-secondary" href="mailto:tungnt2509@gmail.com">Contact Me</a>-->
-<!--                </div>-->
+                <!--                <div class="buttons">-->
+                <!--                    <a id="download-resume"-->
+                <!--                       class="btn btn-primary">-->
+                <!--                        Download Resume-->
+                <!--                    </a>-->
+                <!--                    <a class="btn btn-secondary" href="mailto:tungnt2509@gmail.com">Contact Me</a>-->
+                <!--                </div>-->
             </div>
         </div>
     </section>
 
-    <section>
+    <!--    <section>-->
 
-        <div class="metrics">
+    <!--        <div class="metrics">-->
 
-            <div class="metric-card glass">
-                <div class="metric-title">8+</div>
-                <div class="metric-subtitle">
-                    Years Experience
-                </div>
-            </div>
+    <!--            <div class="metric-card glass">-->
+    <!--                <div class="metric-title">8+</div>-->
+    <!--                <div class="metric-subtitle">-->
+    <!--                    Years Experience-->
+    <!--                </div>-->
+    <!--            </div>-->
 
-            <div class="metric-card glass">
-                <div class="metric-title">Banking</div>
-                <div class="metric-subtitle">
-                    Domain Expertise
-                </div>
-            </div>
+    <!--            <div class="metric-card glass">-->
+    <!--                <div class="metric-title">Banking</div>-->
+    <!--                <div class="metric-subtitle">-->
+    <!--                    Domain Expertise-->
+    <!--                </div>-->
+    <!--            </div>-->
 
-            <div class="metric-card glass">
-                <div class="metric-title">Microservices</div>
-                <div class="metric-subtitle">
-                    Architecture Focus
-                </div>
-            </div>
+    <!--            <div class="metric-card glass">-->
+    <!--                <div class="metric-title">Microservices</div>-->
+    <!--                <div class="metric-subtitle">-->
+    <!--                    Architecture Focus-->
+    <!--                </div>-->
+    <!--            </div>-->
 
-            <div class="metric-card glass">
-                <div class="metric-title">10+</div>
-                <div class="metric-subtitle">
-                    Engineers Led
-                </div>
-            </div>
+    <!--            <div class="metric-card glass">-->
+    <!--                <div class="metric-title">10+</div>-->
+    <!--                <div class="metric-subtitle">-->
+    <!--                    Engineers Led-->
+    <!--                </div>-->
+    <!--            </div>-->
 
-        </div>
+    <!--        </div>-->
 
-    </section>
+    <!--    </section>-->
 
     <section>
         <h2 class="section-title">Career Journey</h2>
@@ -384,21 +393,21 @@
                 <div class="project-role">Software Engineer • 2017 — 2021</div>
                 <p>Built enterprise applications, REST APIs and business management systems. Developed strong
                     foundations in software architecture, database design and backend engineering.</p>
-                <div class="tags">
-                    <span class="tag">Java</span><span class="tag">Groovy/Grails</span><span
-                        class="tag">PostgreSQL</span><span class="tag">REST API</span>
-                </div>
+                <!--                <div class="tags">-->
+                <!--                    <span class="tag">Java</span><span class="tag">Groovy/Grails</span><span-->
+                <!--                        class="tag">PostgreSQL</span><span class="tag">REST API</span>-->
+                <!--                </div>-->
             </div>
 
             <div class="project glass">
                 <h3>⛳ Golf Software Solutions</h3>
                 <div class="project-role">Senior Backend Engineer → Backend Lead • 2021 — 2025</div>
-                <p>Led backend development for golf technology products. Responsible for architecture design, API
+                <p>Leading backend development for golf technology products. Responsible for architecture design, API
                     development, production support, team leadership and stakeholder collaboration.</p>
-                <div class="tags">
-                    <span class="tag">Spring Boot</span><span class="tag">MongoDB</span><span
-                        class="tag">RabbitMQ</span><span class="tag">Elasticsearch</span>
-                </div>
+                <!--                <div class="tags">-->
+                <!--                    <span class="tag">Spring Boot</span><span class="tag">MongoDB</span><span-->
+                <!--                        class="tag">RabbitMQ</span><span class="tag">Elasticsearch</span>-->
+                <!--                </div>-->
             </div>
 
             <div class="project glass">
@@ -406,10 +415,10 @@
                 <div class="project-role">Lead Backend Engineer • 2025 — Present</div>
                 <p>Leading backend development for enterprise banking systems with focus on Microservices, Kafka, Redis,
                     CI/CD and high-volume business workflows.</p>
-                <div class="tags">
-                    <span class="tag">Java 17</span><span class="tag">Kafka</span><span class="tag">Redis</span><span
-                        class="tag">Kubernetes</span>
-                </div>
+                <!--                <div class="tags">-->
+                <!--                    <span class="tag">Java 17</span><span class="tag">Kafka</span><span class="tag">Redis</span><span-->
+                <!--                        class="tag">Kubernetes</span>-->
+                <!--                </div>-->
             </div>
         </div>
     </section>
@@ -420,51 +429,110 @@
 
             <div class="project glass">
                 <h3>🏦 Property & Document Management System (PDMS)</h3>
-                <div class="project-role">Lead Backend Engineer</div>
-                <p>Enterprise banking platform for managing collateral assets, warehouse operations and document
-                    lifecycle workflows. Designed scalable microservices and event-driven processing architecture.</p>
+
+                <div class="project-role">
+                    Lead Backend Engineer
+                </div>
+
+                <ul class="project-highlights">
+                    <li>🏢 Enterprise banking platform for collateral asset, warehouse and document management.</li>
+                    <li>⚡ Designed and implemented scalable microservices architecture.</li>
+                    <li>📄 Built document lifecycle workflows, approval processes and audit tracking.</li>
+                    <li>🔄 Developed event-driven services using Kafka for asynchronous processing.</li>
+                    <li>🚀 Optimized system performance with Redis caching and database tuning.</li>
+                    <li>👨‍💻 Led backend development, architecture decisions and CI/CD implementation.</li>
+                </ul>
+
                 <div class="tags">
-                    <span class="tag">Spring Boot</span><span class="tag">Kafka</span><span
-                        class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span
-                        class="tag">CI/CD</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">Kafka</span>
+                    <span class="tag">Redis</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">Microservices</span>
                 </div>
             </div>
 
+
             <div class="project glass">
+
                 <h3>⛳ Gonta Ecosystem</h3>
-                <div class="project-role">Backend Lead</div>
-                <p>Golf technology ecosystem combining GPS, scorecards, booking services, handicap management, social
-                    features and golfer communities. Supporting 13,000+ users and 40,000+ golf courses.</p>
-                <div class="tags">
-                    <span class="tag">Java</span><span class="tag">Spring Boot</span><span
-                        class="tag">MongoDB</span><span class="tag">Elasticsearch</span><span
-                        class="tag">RabbitMQ</span>
+
+                <div class="project-role">
+                    Backend Lead
                 </div>
+
+                <ul class="project-highlights">
+                    <li>👥 Serving <strong>40,000+ golfers</strong> worldwide.</li>
+                    <li>🌍 GPS coverage for <strong>100,000+ golf courses</strong> globally.</li>
+                    <li>📅 Tee-time booking, scorecard management and handicap calculation based on WHS standards.</li>
+                    <li>🤝 Social features, golfer communities and real-time engagement services.</li>
+                    <li>🤖 Integrated AI Golf Assistant powered by LLMs, RAG and Vector Search.</li>
+                    <li>⚡ Led backend architecture, scalability and production operations.</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">Kafka</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Elasticsearch</span>
+                    <span class="tag">LLM</span>
+                    <span class="tag">RAG</span>
+                    <span class="tag">VectorDB</span>
+                    <span class="tag">Angular</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">TailwindCSS</span>
+                    <span class="tag">Ant Design</span>
+                </div>
+
             </div>
+
 
             <div class="project glass">
                 <h3>☕ URCup Retail Platform</h3>
-                <div class="project-role">Lead Backend Engineer</div>
-                <p>Retail ecosystem for beverage ordering, inventory management, voucher campaigns, payment integrations
-                    and logistics services.</p>
+
+                <div class="project-role">
+                    Lead Backend Engineer
+                </div>
+
+                <ul class="project-highlights">
+                    <li>🛒 Built a retail ecosystem for beverage ordering, inventory and product management.</li>
+                    <li>🎟️ Developed voucher, promotion and loyalty program services.</li>
+                    <li>💳 Integrated payment gateways including MoMo and VNPay.</li>
+                    <li>🚚 Connected third-party logistics providers for delivery fulfillment.</li>
+                    <li>⚡ Designed scalable backend APIs supporting mobile and web applications.</li>
+                    <li>👨‍💻 Led backend architecture, database design and technical implementation.</li>
+                </ul>
+
                 <div class="tags">
-                    <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span
-                        class="tag">VNPay</span><span class="tag">MoMo</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">RabbitMQ</span>
+                    <span class="tag">MoMo - VNPay</span>
                 </div>
             </div>
-
             <div class="project glass">
 
                 <h3>🏢 Easy Building</h3>
+
                 <div class="project-role">
                     Backend Engineer
                 </div>
 
-                <p>
-                    Building and apartment management platform supporting residents,
-                    facility operations, maintenance workflows and administration services.
-                    Developed backend services and participated in architecture improvements.
-                </p>
+                <ul class="project-highlights">
+                    <li>🏘️ Developed building, apartment and office management services.</li>
+                    <li>🔧 Implemented resident management, maintenance and facility operation workflows.</li>
+                    <li>📢 Built notification and event-driven services for residents and administrators.</li>
+                    <li>⚡ Optimized backend APIs and database performance for daily operations.</li>
+                    <li>🤝 Collaborated with cross-functional teams to deliver scalable business features.</li>
+                </ul>
 
                 <div class="tags">
                     <span class="tag">Java</span>
@@ -475,24 +543,26 @@
                 </div>
 
             </div>
-
             <div class="project glass">
 
-                <h3>⛳ Golf Management System (GMS)</h3>
+                <h3>🍽️ Restaurant Management Platform</h3>
+
                 <div class="project-role">
                     Backend Engineer
                 </div>
 
-                <p>
-                    Golf course and restaurant management platform with online booking,
-                    scheduling and operational management capabilities. Developed APIs
-                    and business workflows for golf clubs and hospitality services.
-                </p>
+                <ul class="project-highlights">
+                    <li>🍴 Developed restaurant operations and order management services.</li>
+                    <li>📦 Built inventory, menu and product management modules.</li>
+                    <li>📅 Implemented online reservation and scheduling workflows.</li>
+                    <li>💳 Integrated payment processing and customer management features.</li>
+                    <li>⚡ Designed RESTful APIs supporting web and mobile applications.</li>
+                </ul>
 
                 <div class="tags">
-                    <span class="tag">Java</span>
                     <span class="tag">Groovy/Grails</span>
                     <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
                     <span class="tag">RabbitMQ</span>
                     <span class="tag">REST API</span>
                 </div>
@@ -500,23 +570,26 @@
             </div>
             <div class="project glass">
 
-                <h3>📊 Customer Relationship Management (CRM)</h3>
+                <h3>📊 CRM & Customer Service Platform</h3>
 
                 <div class="project-role">
-                    Lead Backend Engineer
+                    Backend Engineer
                 </div>
 
-                <p>
-                    Enterprise CRM platform designed to manage customer profiles,
-                    sales pipelines, marketing campaigns and customer service operations.
-                    Built scalable backend services supporting business workflows,
-                    reporting and third-party integrations.
-                </p>
+                <ul class="project-highlights">
+                    <li>👥 Centralized customer profile and relationship management platform.</li>
+                    <li>📈 Built lead tracking, sales pipeline and campaign management services.</li>
+                    <li>🎫 Developed customer support and ticket management workflows.</li>
+                    <li>📊 Implemented reporting, analytics and operational dashboards.</li>
+                    <li>⚡ Designed scalable backend services and third-party integrations.</li>
+                    <li>🚀 Improved system performance using Redis caching and asynchronous processing.</li>
+                </ul>
 
                 <div class="tags">
                     <span class="tag">Java</span>
                     <span class="tag">Spring Boot</span>
                     <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
                     <span class="tag">Redis</span>
                     <span class="tag">RabbitMQ</span>
                     <span class="tag">REST API</span>
@@ -529,11 +602,10 @@
     <section>
         <h2 class="section-title">Core Technologies</h2>
         <div class="skills">
-            <div class="skill">Java 8/11/17</div>
+            <div class="skill">Java</div>
             <div class="skill">Spring Boot</div>
             <div class="skill">Microservices</div>
             <div class="skill">Kafka</div>
-            <div class="skill">RabbitMQ</div>
             <div class="skill">Redis</div>
             <div class="skill">PostgreSQL</div>
             <div class="skill">MongoDB</div>
@@ -541,7 +613,29 @@
             <div class="skill">Docker</div>
             <div class="skill">Kubernetes</div>
             <div class="skill">CI/CD</div>
+            <div class="skill">Angular</div>
+            <div class="skill">TypeScript</div>
+            <div class="skill">System Design</div>
+            <div class="skill">LLM</div>
+            <div class="skill">RAG</div>
+            <div class="skill">VectorDB</div>
         </div>
+    </section>
+
+    <section>
+
+        <h2>🏆 Problem Solving</h2>
+
+        <div class="glass">
+
+            <p>
+                Solved <strong>1000+</strong> algorithmic challenges on LeetCode,
+                focusing on data structures, algorithms, concurrency,
+                graph theory, dynamic programming and backend-oriented problem solving.
+            </p>
+
+        </div>
+
     </section>
 
     <section class="contact">
