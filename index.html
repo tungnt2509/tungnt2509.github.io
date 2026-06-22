@@ -292,7 +292,6 @@
         }
 
         @media print {
-
             body {
                 background: white !important;
                 color: black !important;
@@ -321,6 +320,46 @@
                 padding: 20px 0;
             }
         }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .download-btn {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 48px;
+            left: 0;
+            min-width: 180px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background: #1f2937;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -338,13 +377,29 @@
                     Experienced in Java, Spring Boot, Microservices, Kafka, Redis, PostgreSQL, MongoDB and CI/CD.
                     Led backend teams across Banking, GolfTech and Retail domains.
                 </p>
-                <!--                <div class="buttons">-->
-                <!--                    <a id="download-resume"-->
-                <!--                       class="btn btn-primary">-->
-                <!--                        Download Resume-->
-                <!--                    </a>-->
-                <!--                    <a class="btn btn-secondary" href="mailto:tungnt2509@gmail.com">Contact Me</a>-->
-                <!--                </div>-->
+                <div class="buttons">
+                    <!--                    <a class="btn btn-primary" href="https://github.com/tungnt2509" target="_blank">-->
+                    <!--                        GitHub-->
+                    <!--                    </a>-->
+                    <a class="btn btn-secondary" href="mailto:tungnt2509@gmail.com">
+                        Contact Me
+                    </a>
+                    <div class="dropdown">
+                        <button class="download-btn">
+                            Download CV ▼
+                        </button>
+
+                        <div class="dropdown-content">
+                            <a href="Nguyen_Thanh_Tung_CV.pdf" download>
+                                PDF
+                            </a>
+                            <a href="Nguyen_Thanh_Tung_CV.docx" download>
+                                DOCX
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
@@ -622,21 +677,21 @@
         </div>
     </section>
 
-<!--    <section>-->
+    <!--    <section>-->
 
-<!--        <h2>🏆 Problem Solving</h2>-->
+    <!--        <h2>🏆 Problem Solving</h2>-->
 
-<!--        <div class="glass">-->
+    <!--        <div class="glass">-->
 
-<!--            <p>-->
-<!--                Solved <strong>1000+</strong> algorithmic challenges on LeetCode,-->
-<!--                focusing on data structures, algorithms, concurrency,-->
-<!--                graph theory, dynamic programming and backend-oriented problem solving.-->
-<!--            </p>-->
+    <!--            <p>-->
+    <!--                Solved <strong>1000+</strong> algorithmic challenges on LeetCode,-->
+    <!--                focusing on data structures, algorithms, concurrency,-->
+    <!--                graph theory, dynamic programming and backend-oriented problem solving.-->
+    <!--            </p>-->
 
-<!--        </div>-->
+    <!--        </div>-->
 
-<!--    </section>-->
+    <!--    </section>-->
 
     <section class="contact">
         <h2 class="section-title">Let's Connect</h2>
