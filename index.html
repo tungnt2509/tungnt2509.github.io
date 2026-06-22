@@ -136,17 +136,29 @@
 
         button.btn {
             border: none;
-            cursor: pointer;
             font-family: inherit;
         }
 
-        .btn {
-            padding: 12px 22px;
+        .btn, .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            padding: 0 22px;
             border-radius: 12px;
-            text-decoration: none;
+            font-size: 14px;
             font-weight: 600;
+            text-decoration: none;
             transition: .3s;
             cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        .download-btn {
+            border: none;
+            background: #2563eb;
+            color: white;
+            font-family: inherit;
         }
 
         .btn-primary {
@@ -156,7 +168,8 @@
 
         .btn-secondary {
             border: 1px solid var(--border);
-            color: #fff
+            color: #fff;
+            background: transparent;
         }
 
         .btn:hover, .card:hover {
@@ -325,25 +338,17 @@
             position: relative;
         }
 
-        .download-btn {
-            padding: 12px 18px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            background: #2563eb;
-            color: white;
-        }
-
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 48px;
+            top: 52px;
             left: 0;
             min-width: 180px;
             border-radius: 12px;
             overflow: hidden;
             background: #111827;
             border: 1px solid rgba(255, 255, 255, .08);
+            z-index: 10;
         }
 
         .dropdown-content a {
