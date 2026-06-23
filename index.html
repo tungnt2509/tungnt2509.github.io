@@ -139,6 +139,11 @@
             font-family: inherit;
         }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
         .btn, .download-btn {
             display: inline-flex;
             align-items: center;
@@ -339,16 +344,19 @@
         }
 
         .dropdown-content {
-            display: none;
             position: absolute;
-            top: 52px;
+            top: calc(100% + 6px);
             left: 0;
             min-width: 180px;
             border-radius: 12px;
             overflow: hidden;
             background: #111827;
             border: 1px solid rgba(255, 255, 255, .08);
-            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-5px);
+            transition: .2s;
+            z-index: 999;
         }
 
         .dropdown-content a {
@@ -363,7 +371,10 @@
         }
 
         .dropdown:hover .dropdown-content {
-            display: block;
+            /*display: block;*/
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
     </style>
 </head>
